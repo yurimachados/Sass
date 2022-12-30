@@ -1,0 +1,10 @@
+
+/**
+* Para configurar um arquivo como partials, basta adicionar um _ no inicio
+* que o @import o reconhecerá e é só passar o nome do arquivo, sem o _ e o .scss
+*/ 
+@import 'vars';
+@import 'destack';
+@import 'reset';
+@import 'cars';
+@import 'body';
