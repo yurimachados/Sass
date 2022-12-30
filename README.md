@@ -1,3 +1,15 @@
+## Variaveis
+- Facilitam a customização e reaproveitamento
+
+## Identação / Hierarquia
+- Estruturação de componentes
+- Herança
+- Evita sobreposição
+
+## Partials
+- Modularizar o código
+- Snippets
+
 # SASS
 Referência: https://sass-lang.com/
 
@@ -18,15 +30,3 @@ sass ./scss/style.scss ./css/style.css
 8. salvar alterações
 9. comitar no seu repositório
 10. enviar o link do repositório para o portal da EBAC
-
-## Variaveis
-- Facilitam a customização e reaproveitamento
-
-## Identação / Hierarquia
-- Estruturação de componentes
-- Herança
-- Evita sobreposição
-
-## Partials
-- Modularizar o código
-- Snippets
