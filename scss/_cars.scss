@@ -1,46 +1,86 @@
-@import 'vars';
+// Este é um mixin, como se fosse uma função para o sass
+@mixin theme($border : black, $bg: $color-02) {
+    background-color: $bg;
+    border: 1px solid $border;
+    border-radius: 1px 1px 1px 1px;
+    box-shadow: 1px 2px 6px black;
+}
+
 
 .cars {
+    
+    /* 
+    * Diferente do que foi ensinado no curso, a herança no Sass
+    * precisa conter o "%" na frente, pode ser feito por uma classe
+    * utilizadno o ponto. @extend .class ou @extend %example
+    */
+    @extend %blocks;
 
-    h2 {
+    &__title {
         color: $color-01;
     }
 
-    ul {
+    &__name {
+        font-size: 20px;
+        font-weight: 700;
+        color: white;
+        margin: 1.3rem;
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        color: white;
+        margin: 1.3rem;
+    }
+    
+    &__list {
         list-style-type: none;
         font-size: $font-small;
-        display: block;
-        height: 250px;
+        display: inline-block;
+        height: auto;
         padding: 1rem 0;
         width: 100%;
     }
 
-    li {
+    &__item {
+        border: 1px solid black;
         color: $color-02;
         display: block;
         float: left;
-        margin: 1rem 1.5rem;
-        width: 30%;
-        
+        margin: 1rem 0.5rem;
+        box-shadow: 1px 2px 6px black;
+        width: calc(99% / 3 - 15px);
 
-        .img-container {
-            display: block;
-            height: 200px;
-            overflow: hidden;
-            width: 100%;
+        &--destack{
+            @include theme(#d0f019, #5a5858,);
         }
 
-        a {
-            background-color: $color-01;
-            border-radius: 5px;
-            color: white;
-            display: block;
-            font-size: $font-medium;
-            margin: $mt-02 auto $mb;
-            padding: 4px 8px;
-            text-align: center;
-            text-decoration: none;
+         @media (max-width: $tablet) {
+            width: calc(99% - 30px);
         }
+
     }
 
+    &__img-container {
+        display: block;
+        height: 15rem;
+        overflow: hidden;
+        width: 100%;
+        @media (max-width: $tablet) {
+            height: 20rem;
+        }
+    }
+    
+    &__buttom {
+        background-color: $color-01;
+        border-radius: 20px;
+        border: 1px solid rgb(224, 221, 221);
+        color: white;
+        display: block;
+        font-size: $font-medium;
+        margin: $mt-02 $mb $mb $mb;
+        padding: 4px 8px;
+        text-align: center;
+        text-decoration: none;
+    }
 }

@@ -42,10 +42,20 @@ footer {
   padding: 4rem 0;
 }
 
-section,
+section {
+  padding: 0;
+  height: auto;
+}
+
 .container {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 85.7142857143%;
+  height: auto;
+}
+@media (max-width: 1199px) {
+  .container {
+    max-width: 83.3333333333%;
+  }
 }
 
 img {
@@ -53,37 +63,74 @@ img {
   height: auto;
 }
 
-.cars h2 {
-  color: rgb(3, 37, 68);
+.cars {
+  /* 
+  * Diferente do que foi ensinado no curso, a herança no Sass
+  * precisa conter o "%" na frente, pode ser feito por uma classe
+  * utilizadno o ponto. @extend .class ou @extend %example
+  */
 }
-.cars ul {
+.cars__title {
+  color: rgb(166, 81, 184);
+}
+.cars__name {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin: 1.3rem;
+}
+.cars__subtitle {
+  font-size: 14px;
+  color: white;
+  margin: 1.3rem;
+}
+.cars__list {
   list-style-type: none;
   font-size: 1.2rem;
-  display: block;
-  height: 250px;
+  display: inline-block;
+  height: auto;
   padding: 1rem 0;
   width: 100%;
 }
-.cars li {
+.cars__item {
+  border: 1px solid black;
   color: #999;
   display: block;
   float: left;
-  margin: 1rem 1.5rem;
-  width: 30%;
+  margin: 1rem 0.5rem;
+  box-shadow: 1px 2px 6px black;
+  width: calc(33% - 15px);
 }
-.cars li .img-container {
+.cars__item--destack {
+  background-color: #5a5858;
+  border: 1px solid #d0f019;
+  border-radius: 1px 1px 1px 1px;
+  box-shadow: 1px 2px 6px black;
+}
+@media (max-width: 999px) {
+  .cars__item {
+    width: calc(99% - 30px);
+  }
+}
+.cars__img-container {
   display: block;
-  height: 200px;
+  height: 15rem;
   overflow: hidden;
   width: 100%;
 }
-.cars li a {
-  background-color: rgb(3, 37, 68);
-  border-radius: 5px;
+@media (max-width: 999px) {
+  .cars__img-container {
+    height: 20rem;
+  }
+}
+.cars__buttom {
+  background-color: rgb(166, 81, 184);
+  border-radius: 20px;
+  border: 1px solid rgb(224, 221, 221);
   color: white;
   display: block;
   font-size: 2rem;
-  margin: 2rem auto 2rem;
+  margin: 2rem 2rem 2rem 2rem;
   padding: 4px 8px;
   text-align: center;
   text-decoration: none;
@@ -96,18 +143,18 @@ body {
 }
 
 p {
-  color: rgb(3, 37, 68);
+  color: rgb(166, 81, 184);
   font-size: 1.8rem;
   margin-bottom: 2rem;
   text-align: left;
 }
 
 section {
-  background-color: #a3a3a3;
+  background-color: #b3b0b0;
 }
 
 h1 {
-  color: rgb(3, 37, 68);
+  color: rgb(166, 81, 184);
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 4rem;
   margin-top: 2rem;
@@ -127,6 +174,28 @@ header,
 footer {
   background-color: rgb(218, 216, 216);
   border: 1px solid #111;
+}
+
+.cars, .bikes {
+  /*
+      BEM CSS
+
+      - Block
+      - Element
+      - Modifier
+
+      - Padrão de projeto / Design Paterns
+
+      Exemplo:
+      .cars_title
+      .cars_list
+      .cars_item
+      .cars_item--destack
+      .cars_buttom
+      .cars_img-container
+
+  */
+  padding: 3rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */
